@@ -1,0 +1,13 @@
+<article class="userList">
+  <shared-search-bar
+    placeholder="Search by name"
+    (onValue)="searchByName($event)"
+    class="userList__search"
+  ></shared-search-bar>
+
+  <main class="userList__list">
+    <div *ngFor="let user of users" class="userList__list__item">
+      <shared-user-card [user]="user"></shared-user-card>
+    </div>
+  </main>
+</article>

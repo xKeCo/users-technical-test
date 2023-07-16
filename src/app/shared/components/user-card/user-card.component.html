@@ -1,0 +1,43 @@
+<div class="userCard">
+  <div class="userCard__info">
+    <div class="userCard__avatar">
+      <img
+        src="https://source.boringavatars.com/beam/120/{{
+          user.username
+        }}?colors=0A0310,49007E,FF005B,FF7D10,FFB238"
+        alt="User avatar"
+        class="userCard__avatar__item"
+        width="100%"
+      />
+    </div>
+
+    <div class="userCard__content">
+      <h1 class="userCard__content__name">{{ user.name }}</h1>
+      <p class="userCard__content__subText userCard__content__email">
+        {{ user.email }}
+      </p>
+
+      <div class="userCard__content" *ngIf="showMoreDetails">
+        <hr style="width: 100%" />
+
+        <p class="userCard__content__subText userCard__content__address">
+          <strong> Address: </strong>
+          {{ user.address.street }}, {{ user.address.suite }},
+          {{ user.address.city }}, {{ user.address.zipcode }}
+        </p>
+
+        <div class="userCard__content__subText userCard__content__company">
+          <strong> Company: </strong> {{ user.company.name }}
+          <br />
+          <strong> Bs: </strong> {{ user.company.bs }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="userCard__action">
+    <button (click)="toggleMoreDetails()" class="userCard__action__button">
+      {{ showMoreDetails ? "Less info" : "More info" }}
+    </button>
+  </div>
+</div>
