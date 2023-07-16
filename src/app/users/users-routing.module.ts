@@ -8,10 +8,10 @@ const routes: Routes = [
     path: 'details/:id',
     component: UserDetailsComponent,
   },
-  {
-    path: '**',
-    redirectTo: 'home',
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: 'users',
+  // },
 ];
 
 @NgModule({

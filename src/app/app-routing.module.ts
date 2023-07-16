@@ -13,10 +13,10 @@ const routes: Routes = [
     path: 'users',
     component: UserListComponent,
   },
-  {
-    path: '**',
-    redirectTo: 'users',
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: 'users',
+  // },
 ];
 
 @NgModule({
