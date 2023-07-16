@@ -1,0 +1,76 @@
+.userCard {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 1rem;
+  gap: 1rem;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.5rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__avatar {
+    min-width: 45px;
+    min-height: 45px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.3rem;
+
+    &__name {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    &__subText {
+      font-size: 0.875rem;
+      font-weight: 400;
+      margin: 0;
+      color: #666;
+    }
+  }
+
+  &__action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 0.875rem;
+      font-size: "Inter", sans-serif;
+      border: 1px solid black;
+
+      @media (max-width: 400px) {
+        width: 100%;
+      }
+    }
+  }
+}

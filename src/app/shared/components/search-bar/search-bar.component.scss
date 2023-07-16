@@ -1,0 +1,21 @@
+.searchBar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__input {
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+    background-color: #fafafa;
+    padding: 10px;
+    width: 100%;
+    font-size: 0.875rem;
+    font-family: "Inter", sans-serif;
+    transition: all 0.2s ease-in-out;
+
+    &:focus {
+      outline: none;
+      border: 1px solid #999;
+    }
+  }
+}
