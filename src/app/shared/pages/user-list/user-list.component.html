@@ -6,8 +6,12 @@
   ></shared-search-bar>
 
   <main class="userList__list">
-    <div *ngFor="let user of users" class="userList__list__item">
+    <div *ngFor="let user of results" class="userList__list__item">
       <shared-user-card [user]="user"></shared-user-card>
     </div>
+
+    <ng-container *ngIf="results.length === 0">
+      <h1 class="userList__list__empty">No results found</h1>
+    </ng-container>
   </main>
 </article>

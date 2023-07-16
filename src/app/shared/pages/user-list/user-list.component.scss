@@ -16,10 +16,16 @@
     justify-content: space-around;
     align-items: flex-start;
     gap: 0.875rem;
-    width: calc(100% - 32px);
+    width: 100%;
 
     &__item {
       width: 100%;
+    }
+
+    &__empty {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #666;
     }
   }
 }
