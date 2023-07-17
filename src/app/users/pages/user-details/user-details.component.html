@@ -1,8 +1,12 @@
-<div class="userDetails">
+<ng-template #loading>
+  <shared-loader></shared-loader>
+</ng-template>
+
+<div *ngIf="user; else loading" class="userDetails">
   <header class="userDetails__breadcrumb">
     <div routerLink="/users" class="userDetails__breadcrumb__link">Users</div>
     <p class="userDetails__breadcrumb__separator"></p>
-    <p class="userDetails__breadcrumb__actual">{{ user?.name }}</p>
+    <p class="userDetails__breadcrumb__actual">{{ user.name }}</p>
   </header>
 
   <h1 class="userDetails__content__title">User info</h1>
@@ -11,7 +15,7 @@
       <section class="userDetails__content__info__avatar">
         <img
           src="https://source.boringavatars.com/beam/120/{{
-            user?.username
+            user.username
           }}?colors=0A0310,49007E,FF005B,FF7D10,FFB238"
           alt="User avatar"
           width="100%"
@@ -19,18 +23,18 @@
       </section>
 
       <section class="userDetails__content__info__data">
-        <h1 class="userDetails__content__info__data__name">{{ user?.name }}</h1>
+        <h1 class="userDetails__content__info__data__name">{{ user.name }}</h1>
         <h2 class="userDetails__content__info__data__username">
-          @{{ user?.username }}
+          @{{ user.username }}
         </h2>
         <h3
-          (click)="goToUrl(user?.website)"
+          (click)="goToUrl(user.website)"
           class="userDetails__content__info__data__website"
         >
-          {{ user?.website }}
+          {{ user.website }}
         </h3>
         <h3 class="userDetails__content__info__data__number">
-          {{ user?.phone }}
+          {{ user.phone }}
         </h3>
       </section>
     </article>
@@ -42,14 +46,14 @@
         <p class="userDetails__content__additonal__data__title">
           Company name:
           <span class="userDetails__content__additonal__data__text">
-            {{ user?.company?.name }}
+            {{ user.company.name }}
           </span>
         </p>
 
         <p class="userDetails__content__additonal__data__title">
           Bussines service:
           <span class="userDetails__content__additonal__data__text">
-            {{ user?.company?.bs }}
+            {{ user.company.bs }}
           </span>
         </p>
 
@@ -57,7 +61,7 @@
           Bussines catchphrase:
         </p>
         <p class="userDetails__content__additonal__data__text">
-          {{ user?.company?.catchPhrase }}
+          {{ user.company.catchPhrase }}
         </p>
       </section>
     </article>
@@ -70,17 +74,17 @@
           Current location:
         </h1>
         <p class="userDetails__content__additonal__data__text">
-          {{ user?.address?.street }}, {{ user?.address?.suite }},
-          {{ user?.address?.city }}, {{ user?.address?.zipcode }}
+          {{ user.address.street }}, {{ user.address.suite }},
+          {{ user.address.city }}, {{ user.address.zipcode }}
         </p>
         <button
           class="userDetails__content__additonal__data__button"
           (click)="
             goToUrl(
               'maps.google.com/maps?z=12&t=m&q=loc:' +
-                user?.address?.geo?.lat +
+                user.address.geo.lat +
                 '+' +
-                user?.address?.geo?.lng
+                user.address.geo.lng
             )
           "
         >

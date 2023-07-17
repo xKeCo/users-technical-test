@@ -5,7 +5,11 @@
     class="userList__search"
   ></shared-search-bar>
 
-  <main class="userList__list">
+  <ng-template #loading>
+    <shared-loader></shared-loader>
+  </ng-template>
+
+  <main *ngIf="results; else loading" class="userList__list">
     <div *ngFor="let user of results" class="userList__list__item">
       <shared-user-card [user]="user"></shared-user-card>
     </div>

@@ -11,8 +11,11 @@ export class UsersService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getUsers() {
-    return this.httpClient.get(this.url);
+  public getUsers(): Observable<User[] | null> {
+    return this.httpClient.get<User[]>(this.url).pipe(
+      map((users) => (users ? users : null)),
+      catchError(() => of(null))
+    );
   }
 
   searchUserById(id: string): Observable<User | null> {

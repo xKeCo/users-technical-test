@@ -7,6 +7,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     UserManagementModuleComponent,
     SearchBarComponent,
     UserCardComponent,
+    LoaderComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -22,6 +24,7 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     UserListComponent,
     UserManagementModuleComponent,
     SearchBarComponent,
+    LoaderComponent,
   ],
 })
 export class SharedModule {}
