@@ -33,64 +33,58 @@
         >
           {{ user.website }}
         </h3>
-        <h3 class="userDetails__content__info__data__number">
+        <h3 class="userDetails__content__info__data__phone">
           {{ user.phone }}
         </h3>
       </section>
     </article>
 
-    <article class="userDetails__content__additonal">
-      <h1 class="userDetails__content__title">Company info</h1>
+    <h1 class="userDetails__content__title">Company info</h1>
 
-      <section class="userDetails__content__additonal__data">
-        <p class="userDetails__content__additonal__data__title">
-          Company name:
-          <span class="userDetails__content__additonal__data__text">
-            {{ user.company.name }}
-          </span>
-        </p>
+    <section class="userDetails__content__additonal">
+      <p class="userDetails__content__additonal__title">
+        Company name:
+        <span class="userDetails__content__additonal__text">
+          {{ user.company.name }}
+        </span>
+      </p>
 
-        <p class="userDetails__content__additonal__data__title">
-          Bussines service:
-          <span class="userDetails__content__additonal__data__text">
-            {{ user.company.bs }}
-          </span>
-        </p>
+      <p class="userDetails__content__additonal__title">
+        Bussines service:
+        <span class="userDetails__content__additonal__text">
+          {{ user.company.bs }}
+        </span>
+      </p>
 
-        <p class="userDetails__content__additonal__data__title">
-          Bussines catchphrase:
-        </p>
-        <p class="userDetails__content__additonal__data__text">
-          {{ user.company.catchPhrase }}
-        </p>
-      </section>
-    </article>
+      <p class="userDetails__content__additonal__title">
+        Bussines catchphrase:
+      </p>
+      <p class="userDetails__content__additonal__text">
+        {{ user.company.catchPhrase }}
+      </p>
+    </section>
 
-    <article class="userDetails__content__additonal">
-      <h1 class="userDetails__content__title">Address info</h1>
+    <h1 class="userDetails__content__title">Address info</h1>
 
-      <section class="userDetails__content__additonal__data">
-        <h1 class="userDetails__content__additonal__data__title">
-          Current location:
-        </h1>
-        <p class="userDetails__content__additonal__data__text">
-          {{ user.address.street }}, {{ user.address.suite }},
-          {{ user.address.city }}, {{ user.address.zipcode }}
-        </p>
-        <button
-          class="userDetails__content__additonal__data__button"
-          (click)="
-            goToUrl(
-              'maps.google.com/maps?z=12&t=m&q=loc:' +
-                user.address.geo.lat +
-                '+' +
-                user.address.geo.lng
-            )
-          "
-        >
-          See on map
-        </button>
-      </section>
-    </article>
+    <section class="userDetails__content__additonal">
+      <h1 class="userDetails__content__additonal__title">Current location:</h1>
+      <p class="userDetails__content__additonal__text">
+        {{ user.address.street }}, {{ user.address.suite }},
+        {{ user.address.city }}, {{ user.address.zipcode }}
+      </p>
+      <button
+        class="userDetails__content__additonal__button"
+        (click)="
+          goToUrl(
+            'maps.google.com/maps?z=12&t=m&q=loc:' +
+              user.address.geo.lat +
+              '+' +
+              user.address.geo.lng
+          )
+        "
+      >
+        See on map
+      </button>
+    </section>
   </main>
 </div>
