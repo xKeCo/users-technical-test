@@ -24,18 +24,44 @@
 
       <section class="userDetails__content__info__data">
         <h1 class="userDetails__content__info__data__name">{{ user.name }}</h1>
+
         <h2 class="userDetails__content__info__data__username">
           @{{ user.username }}
         </h2>
-        <h3
-          (click)="goToUrl(user.website)"
-          class="userDetails__content__info__data__website"
+
+        <div
+          style="
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+          "
         >
-          {{ user.website }}
-        </h3>
-        <h3 class="userDetails__content__info__data__phone">
-          {{ user.phone }}
-        </h3>
+          <div style="width: 20px; height: 20px; margin-right: 3px">
+            <img src="assets/icons/link.svg" alt="Mail icon" width="100%" />
+          </div>
+
+          <h3
+            (click)="goToUrl(user.website)"
+            class="userDetails__content__info__data__website"
+          >
+            {{ user.website }}
+          </h3>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+          "
+        >
+          <div style="width: 18px; height: 18px; margin-right: 3px">
+            <img src="assets/icons/phone.svg" alt="Mail icon" width="100%" />
+          </div>
+          <h3 class="userDetails__content__info__data__phone">
+            {{ user.phone }}
+          </h3>
+        </div>
       </section>
     </article>
 
@@ -68,10 +94,12 @@
 
     <section class="userDetails__content__additonal">
       <h1 class="userDetails__content__additonal__title">Current location:</h1>
+
       <p class="userDetails__content__additonal__text">
         {{ user.address.street }}, {{ user.address.suite }},
         {{ user.address.city }}, {{ user.address.zipcode }}
       </p>
+
       <button
         class="userDetails__content__additonal__button"
         (click)="
