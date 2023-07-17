@@ -6,17 +6,17 @@ import { UserListComponent } from './shared/pages/user-list/user-list.component'
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomePageComponent,
   },
   {
     path: 'users',
     component: UserListComponent,
   },
-  {
-    path: '**',
-    redirectTo: 'home',
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: 'users',
+  // },
 ];
 
 @NgModule({

@@ -3,7 +3,7 @@
     type="text"
     [placeholder]="placeholder"
     class="searchBar__input"
-    (keypress)="emitValue(txtInput.value)"
+    (keyup)="emitValue(txtInput.value)"
     #txtInput
   />
 </div>

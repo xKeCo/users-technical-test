@@ -18,26 +18,45 @@
       </p>
 
       <div class="userCard__content" *ngIf="showMoreDetails">
-        <hr style="width: 100%" />
+        <hr style="width: 100%; margin: 0.5rem 0" />
 
         <p class="userCard__content__subText userCard__content__address">
-          <strong> Address: </strong>
+          <strong style="font-weight: 600; color: #000"> Address: </strong>
           {{ user.address.street }}, {{ user.address.suite }},
           {{ user.address.city }}, {{ user.address.zipcode }}
         </p>
 
         <div class="userCard__content__subText userCard__content__company">
-          <strong> Company: </strong> {{ user.company.name }}
+          <strong style="font-weight: 600; color: #000"> Company: </strong>
+          {{ user.company.name }}
           <br />
-          <strong> Bs: </strong> {{ user.company.bs }}
+          <strong style="font-weight: 600; color: #000"> Bs: </strong>
+          {{ user.company.bs }}
         </div>
+
+        <button
+          routerLink="/details/{{ user.id }}"
+          class="userCard__action__button"
+        >
+          View full profile
+        </button>
       </div>
     </div>
   </div>
 
   <div class="userCard__action">
-    <button (click)="toggleMoreDetails()" class="userCard__action__button">
-      {{ showMoreDetails ? "Less info" : "More info" }}
+    <button
+      (click)="toggleMoreDetails()"
+      class="userCard__action__button"
+      style="padding: 2px"
+    >
+      <img
+        [src]="
+          showMoreDetails ? 'assets/icons/down.svg' : 'assets/icons/up.svg'
+        "
+        alt="show/hide more details icon"
+        width="100%"
+      />
     </button>
   </div>
 </div>

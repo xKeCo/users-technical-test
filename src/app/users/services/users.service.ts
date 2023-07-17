@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, catchError, map, of } from 'rxjs';
+import { User } from '../interfaces/users';
 
 @Injectable({
   providedIn: 'root',
@@ -9,11 +11,17 @@ export class UsersService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getUsers() {
-    return this.httpClient.get(this.url);
+  public getUsers(): Observable<User[] | null> {
+    return this.httpClient.get<User[]>(this.url).pipe(
+      map((users) => (users ? users : null)),
+      catchError(() => of(null))
+    );
   }
 
-  searchUsers(term: string) {
-    return this.httpClient.get(`${this.url}?name_like=${term}`);
+  searchUserById(id: string): Observable<User | null> {
+    return this.httpClient.get<User>(`${this.url}/${id}`).pipe(
+      map((user) => (user ? user : null)),
+      catchError(() => of(null))
+    );
   }
 }
