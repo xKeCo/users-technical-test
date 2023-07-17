@@ -6,7 +6,7 @@ import { UserListComponent } from './shared/pages/user-list/user-list.component'
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomePageComponent,
   },
   {
