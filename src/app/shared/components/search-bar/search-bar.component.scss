@@ -4,7 +4,7 @@
   align-items: center;
 
   &__input {
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     border: 1px solid #eaeaea;
     background-color: #fafafa;
     padding: 10px;

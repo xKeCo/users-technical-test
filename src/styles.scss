@@ -1,4 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --accents-1: #fafafa;
+  --accents-2: #eaeaea;
+  --accents-2-5: #dbdada;
+  --accents-3: #999;
+  --accents-4: #888;
+  --accents-5: #666;
+  --accents-6: #444;
+  --accents-7: #333;
+  --accents-8: #111;
+
+  --white: #fff;
+  --black: #000;
+
+  --border-radius: 10px;
+
+  --main-transition: all 0.3s ease-out;
+}
+
 * {
   margin: 0;
   padding: 0;

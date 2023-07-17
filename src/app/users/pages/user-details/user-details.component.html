@@ -36,7 +36,15 @@
             align-items: flex-start;
           "
         >
-          <div style="width: 20px; height: 20px; margin-right: 3px">
+          <div
+            style="
+              min-width: 20px;
+              min-height: 20px;
+              width: 20px;
+              height: 20px;
+              margin-right: 3px;
+            "
+          >
             <img src="assets/icons/link.svg" alt="Mail icon" width="100%" />
           </div>
 
@@ -55,7 +63,15 @@
             align-items: flex-start;
           "
         >
-          <div style="width: 18px; height: 18px; margin-right: 3px">
+          <div
+            style="
+              min-width: 18px;
+              min-height: 18px;
+              width: 18px;
+              height: 18px;
+              margin-right: 3px;
+            "
+          >
             <img src="assets/icons/phone.svg" alt="Mail icon" width="100%" />
           </div>
           <h3 class="userDetails__content__info__data__phone">
@@ -84,9 +100,9 @@
 
       <p class="userDetails__content__additonal__title">
         Bussines catchphrase:
-      </p>
-      <p class="userDetails__content__additonal__text">
-        {{ user.company.catchPhrase }}
+        <span class="userDetails__content__additonal__text">
+          {{ user.company.catchPhrase }}
+        </span>
       </p>
     </section>
 
@@ -102,7 +118,15 @@
           align-items: flex-start;
         "
       >
-        <div style="width: 20px; height: 20px; margin-right: 3px">
+        <div
+          style="
+            min-width: 18px;
+            min-height: 18px;
+            width: 18px;
+            height: 18px;
+            margin-right: 3px;
+          "
+        >
           <img src="assets/icons/location.svg" alt="Mail icon" width="100%" />
         </div>
         <p class="userDetails__content__additonal__text">

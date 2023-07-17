@@ -9,7 +9,7 @@
     height: 4.8px;
     display: inline-block;
     position: relative;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     background: rgba(59, 59, 59, 0.05);
     overflow: hidden;
 
