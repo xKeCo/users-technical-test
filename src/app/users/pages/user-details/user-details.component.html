@@ -95,10 +95,21 @@
     <section class="userDetails__content__additonal">
       <h1 class="userDetails__content__additonal__title">Current location:</h1>
 
-      <p class="userDetails__content__additonal__text">
-        {{ user.address.street }}, {{ user.address.suite }},
-        {{ user.address.city }}, {{ user.address.zipcode }}
-      </p>
+      <div
+        style="
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+        "
+      >
+        <div style="width: 20px; height: 20px; margin-right: 3px">
+          <img src="assets/icons/location.svg" alt="Mail icon" width="100%" />
+        </div>
+        <p class="userDetails__content__additonal__text">
+          {{ user.address.street }}, {{ user.address.suite }},
+          {{ user.address.city }}, {{ user.address.zipcode }}
+        </p>
+      </div>
 
       <button
         class="userDetails__content__additonal__button"
